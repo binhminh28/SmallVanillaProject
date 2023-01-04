@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title>Exchange Rate Calculator</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="index.css">
+<body>
+    <img src="./img/exchange-rate.png" alt="money-img" class="money-img" width="200px">
+    <h1>Exchange Rate Calculator</h1>
+    <p>Choose the currency and the amounts to get the exchange rate</p>
+    <div class="container">
+        <div class="currency">
+            <select id="currency-one" onchange="changeCurrencyOne()">
+            </select>
+            <input type="number" id="amount-one" placeholder="0" value="1" onchange="onChangeAmountOne()">
+        </div>
+        <div class="swap-rate-container">
+            <button class="btn" id="rate" onclick="onSwap()">
+                Swap
+            </button>
+            <small class="rate" id="exchange-rate">
+
+            </small>
+        </div>
+        <div class="currency">
+            <select id="currency-two" onchange="changeCurrencyTwo()">
+            </select>
+            <input type="number" id="amount-two" placeholder="0" value="1">
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
