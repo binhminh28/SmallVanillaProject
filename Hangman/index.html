@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<title>Hangman</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="index.css">
+
+<body>
+    <h1>Hangman</h1>
+    <p>Find the hidden word - Enter a letter</p>
+
+    <div class="game-container">
+        <svg width="250" height="200" class="figure-container">
+            <!-- Rod -->
+            <line x1="30" y1="190" x2="90" y2="190" id="rod_1" />
+            <line x1="60" y1="20" x2="60" y2="190" id="rod_2" />
+            <line x1="60" y1="20" x2="140" y2="20" id="rod_3" />
+            <line x1="140" y1="20" x2="140" y2="50" id="rod_4" />
+
+            <!-- Head and eyes -->
+            <circle class="figure-part" id="head" cx="140" cy="70" r="20" />
+            <text class="figure-part" id="left-eye" x="129" y="70" class="small" stroke-width="1px" style="font-size: 10px;">X</text>
+            <text class="figure-part" id="right-eye" x="144" y="70" class="small" stroke-width="1px" style="font-size: 10px;">X</text>
+
+            <!-- Body -->
+            <line class="figure-part" id="body" x1="140" y1="92" x2="140" y2="151" />
+
+            <!-- Arms -->
+            <line class="figure-part" id="left-arm" x1="120" y1="100" x2="140" y2="115" />
+            <line class="figure-part" id="right-arm" x1="140" y1="115" x2="160" y2="100" />
+
+            <!-- Legs -->
+            <line class="figure-part" id="left-leg" x1="120" y1="165" x2="140" y2="145" />
+            <line class="figure-part" id="right-leg" x1="140" y1="145" x2="160" y2="165" />
+        </svg>
+
+        <div class="wrong-letters-container">
+            <p>Wrong letters:</p>
+            <div id="wrong-letters">
+            </div>
+        </div>
+
+        <div class="word" id="word"> </div>
+
+        <!-- Container for final message -->
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message">You Have Won 🥳</h2>
+                <button id="play-button" onclick="window.location.reload()">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Notificattion -->
+        <div class="notification-container" id="notification-container">
+            <p>You have already entered this letter</p>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
